@@ -1,0 +1,11 @@
+body {
+  background-color: #FCC9B9;
+  font-family: futura;
+  padding-left: 5%;
+  padding-top: 3%;
+}
+
+li {
+  text-indent: 25px;
+  list-style-type: none;
+}
