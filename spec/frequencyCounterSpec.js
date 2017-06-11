@@ -1,4 +1,8 @@
+'use strict';
+
  describe('FrequencyCounter', function() {
+
+   var fc;
 
    beforeEach(function() {
      fc = new FrequencyCounter("This is a test string");
