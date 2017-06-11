@@ -1,30 +1,21 @@
-describe('initialize', function(){
-  it('has a placeholder', function(){
-    var note = new frequencyCounter();
-    // assert.isEq(note.text, note.PLACEHOLDER);
+describe('FrequencyCounter', function() {
+
+  beforeEach(function() {
+    bookText = "This is a test string"
+    fc = new FrequencyCounter(bookText);
+  });
+
+  describe('initialize', function() {
+    it('has text', function() {
+      expect(fc.getText).toEqual("This is a test string");
+    })
+  });
+
+  describe('split words', function() {
+    it('splits words when called', function() {
+      fc.splitWords();
+      expect(fc.splitWords()).toEqual(["THE"])
+    })
   })
+
 })
-
-// describe ('gets block', function(){
-//   it('is a failing test', function(){
-//     var note = new Note();
-//     assert.isTrue(note.getText() === "baboon");
-//   });
-
-  // it('gets text', function(){
-  //   var note = new Note();
-  //   assert.isTrue(note.getText() === note.PLACEHOLDER);
-  // })
-// });
-
-// describe ('gets another block', function(){
-//   it('gets more text', function(){
-//    var note = new Note();
-//    assert.isTrue(note.getText() === note.PLACEHOLDER);
-//   })
-
-  // it('gets yet more text', function(){
-  //  var note = new Note();
-  //  assert.isTrue(note.getText() === note.PLACEHOLDER);
-  // })
-// });
