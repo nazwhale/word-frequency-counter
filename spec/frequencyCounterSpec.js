@@ -12,10 +12,6 @@
      it('has text', function() {
        expect(fc.text).toEqual("This is a test string");
      });
-
-     it('has an empty word frequencies object', function() {
-       expect(fc.wordFrequencies).toEqual({});
-     });
    });
 
    describe('string formatting', function() {
@@ -43,6 +39,12 @@
       fc.countFrequencies();
       expect(fc.wordFrequencies).toEqual({'same': 2});
     });
+
+    it('correctly counts a mixture of repeated and unique words', function() {
+      fc.text = ['here', 'are', 'some', 'some', 'words', 'words', 'words', 'words']
+      fc.countFrequencies();
+      expect(fc.wordFrequencies).toEqual({'here': 1, 'are': 1, 'some': 2, 'words': 4});
+    })
   });
 
  })

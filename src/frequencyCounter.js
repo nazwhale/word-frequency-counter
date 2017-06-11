@@ -2,7 +2,6 @@
 
 function FrequencyCounter(text) {
   this.text = text
-  this.wordFrequencies = {}
 }
 
 FrequencyCounter.prototype.splitWords = function() {
@@ -14,16 +13,16 @@ FrequencyCounter.prototype.removeNonAlphas = function() {
 }
 
 FrequencyCounter.prototype.countFrequencies = function() {
-  var countOfWords = this.wordFrequencies
+  var wordFrequencies = {}
 
   this.text.forEach(function (key) {
-    if (countOfWords.hasOwnProperty(key)) {
-      countOfWords[key]++;
+    if (wordFrequencies.hasOwnProperty(key)) {
+      wordFrequencies[key]++;
     } else {
-      countOfWords[key] = 1;
+      wordFrequencies[key] = 1;
     }
   });
 
-  this.wordFrequencies = countOfWords
+  this.wordFrequencies = wordFrequencies
 
 }
