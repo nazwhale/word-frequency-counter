@@ -28,8 +28,10 @@ FrequencyCounter.prototype.countFrequencies = function() {
 }
 
 //Execute the program for a specific text file
+var chosenFile = "./text-files/railway-children.txt"
+
 var fs = require('fs');
-var bookText = fs.readFileSync("./text-files/railway-children.txt", "utf8");
+var bookText = fs.readFileSync(chosenFile, "utf8");
 
 var fc = new FrequencyCounter(bookText)
 fc.removeNonAlphas();
