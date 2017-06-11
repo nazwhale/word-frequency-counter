@@ -34,7 +34,7 @@
       expect(fc.wordFrequencies).toEqual({'some': 1, 'words': 1});
     });
 
-    it('has a value of 2 when there is 2 of the same words', function() {
+    it('has a value of 2 when there is 2 of the same word', function() {
       fc.text = ['same', 'same'];
       fc.countFrequencies();
       expect(fc.wordFrequencies).toEqual({'same': 2});
