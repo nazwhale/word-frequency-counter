@@ -27,5 +27,13 @@
      })
    })
 
+  describe('Count word frequencies', function() {
+    it('has a value of 1 when there is 1 of the word', function() {
+      fc.text = "some words"
+      fc.countFrequencies();
+      expect(fc.wordsMap).toEqual({'some': 1, 'words': 1})
+    })
+  })
+
  })
 

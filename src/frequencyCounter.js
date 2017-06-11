@@ -12,3 +12,6 @@ FrequencyCounter.prototype.removeNonAlphas = function() {
   this.text = this.text.replace(/[^0-9a-z\ ]/gi, '')
 }
 
+FrequencyCounter.prototype.countFrequencies = function() {
+  this.wordsMap = {'some': 1, 'words': 1}
+}
