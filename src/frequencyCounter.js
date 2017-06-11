@@ -2,6 +2,7 @@
 
 function FrequencyCounter(text) {
   this.text = text
+  this.wordFrequencies = {}
 }
 
 FrequencyCounter.prototype.splitWords = function() {
@@ -13,5 +14,16 @@ FrequencyCounter.prototype.removeNonAlphas = function() {
 }
 
 FrequencyCounter.prototype.countFrequencies = function() {
-  this.wordsMap = {'some': 1, 'words': 1}
+  var countOfWords = this.wordFrequencies
+
+  this.text.forEach(function (key) {
+    if (countOfWords.hasOwnProperty(key)) {
+      countOfWords[key]++;
+    } else {
+      countOfWords[key] = 1;
+    }
+  });
+
+  this.wordFrequencies = countOfWords
+
 }
