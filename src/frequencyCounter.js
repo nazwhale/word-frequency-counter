@@ -26,3 +26,13 @@ FrequencyCounter.prototype.countFrequencies = function() {
   this.wordFrequencies = wordFrequencies
 
 }
+
+//Execute the program for a specific text file
+var fs = require('fs');
+var bookText = fs.readFileSync("./text-files/railway-children.txt", "utf8");
+
+var fc = new FrequencyCounter(bookText)
+fc.removeNonAlphas();
+fc.splitWords();
+fc.countFrequencies();
+console.log(fc.wordFrequencies)
