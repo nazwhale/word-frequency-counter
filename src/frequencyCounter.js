@@ -8,6 +8,10 @@ function FrequencyCounter(text) {
 }
 
 FrequencyCounter.prototype.splitWords = function() {
-  return this.text.split(" ")
+  this.text = this.text.split(" ")
+}
+
+FrequencyCounter.prototype.removeNonAlphas = function() {
+  this.text = this.text.replace(/[^0-9a-z\ ]/gi, '')
 }
 

@@ -1,8 +1,7 @@
  describe('FrequencyCounter', function() {
 
    beforeEach(function() {
-     bookText = "This is a test string"
-     fc = new FrequencyCounter(bookText);
+     fc = new FrequencyCounter("This is a test string");
    });
 
    describe('initialize', function() {
@@ -11,10 +10,18 @@
      })
    });
 
-   describe('split words', function() {
+   describe('string formatting', function() {
      it('splits words when called', function() {
-       expect(fc.splitWords()).toEqual(["This","is","a","test","string"])
+       fc.splitWords();
+       expect(fc.text[0]).toEqual("This")
+     })
+
+     it('strips string of non-alphanumeric characters', function() {
+       fc.text = "This string, has unwanted characters. !@#$%^&*;"
+       fc.removeNonAlphas();
+       expect(fc.text).toEqual("This string has unwanted characters ")
      })
    })
+
  })
 
